@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Post - Khách hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="home.html">Đăng xuất</a>
+    </nav>
+
+    <section>
+        <h1>Tra cứu trạng thái và tiến trình chuyển phát</h1>
+        <form id="trackingForm">
+            <label for="trackingCode">Mã đơn hàng:</label>
+            <input type="text" id="trackingCode" name="trackingCode" required>
+            <button type="button" onclick="trackPackage()">Tra cứu</button>
+        </form>
+        <div id="trackingResult">
+
+        </div>
+        <!-- Các trường thông tin như mã vận đơn, v.v. có thể được thêm vào tùy thuộc vào yêu cầu -->
+    </section>
+
+    <script>
+        function trackPackage() {
+            // Lấy mã vận đơn từ ô nhập liệu
+            var trackingCode = document.getElementById("trackingCode").value;
+
+            // Gửi mã vận đơn đến máy chủ để tra cứu
+            var resultMessage = "Trạng thái: Đang vận chuyển<br>Tiến trình: Đang ở kho trung chuyển";
+            
+            // Hiển thị kết quả tra cứu
+            document.getElementById("trackingResult").innerHTML = resultMessage;
+        }
+    </script>
+
+</body>
+</html>
